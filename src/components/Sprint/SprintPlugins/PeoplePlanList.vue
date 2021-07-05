@@ -61,8 +61,7 @@ export default {
       // Loading
       userPlanListLoading: false,
       checkUser: [],
-      cec:null,
-        activeFilter  : [
+      activeFilter  : [
         {text: "T&M", value: true},
         {text: "MS", value: false}
       ],
@@ -91,11 +90,6 @@ export default {
   methods: {
     activefilterHandler (value, row, column) {
       return row['userIsActive'] === value
-    },
-    ces(val){
-      this.$data.userPlanList = this.$parent.userPlanList.filter(item => {
-          if(val == String(item.userIsActive)) return true
-      });
     },
     userAllToSprint(){
       this.checkUser.forEach((item)=>{
@@ -157,9 +151,6 @@ export default {
             }
           });
           this.$parent.userPlanList = this.$data.userPlanList
-          console.log('------------------');
-          console.log(this.$data.userPlanList);
-          console.log('------------------');
         }
         this.$data.userPlanListLoading = false
       }
